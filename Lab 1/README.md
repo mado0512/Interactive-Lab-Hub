@@ -95,7 +95,12 @@ video feed of whichever scene you want to capture.)
 
 **Include your first attempts at recording the wizarded set-up here.**
 
-[link to markdown here](First attempts at wizarded set-up]
+[link to markdown here](first_attempts.mp4]
+
+
+https://github.com/user-attachments/assets/9693671e-1e2b-4672-b5b5-c59ecab835b6
+
+
 
 ## Part E. (optional) Costume the Device
 
@@ -112,8 +117,6 @@ and calm for a bedroom?
 **What concerns or opportunities shaped the way you designed its look?**
 
 ## Part F. Record
-
-[Part F video](final_video.mp4)
 
 [youtube link](https://youtu.be/0ymQoeio_uI)
 
