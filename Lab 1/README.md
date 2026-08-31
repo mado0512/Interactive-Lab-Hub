@@ -56,6 +56,8 @@ For your masterwork, reconstruct the interaction as a scene:
 
 [Storyboards](storyboards.jpg)
 
+### Initial idea exploration & conceptual arts
+
 <img width="8064" height="4536" alt="development" src="https://github.com/user-attachments/assets/acaaf295-64e5-4c92-a202-d7c09e4e6a38" />
 
 
