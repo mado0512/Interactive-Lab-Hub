@@ -115,6 +115,8 @@ and calm for a bedroom?
 
 [Part F video](final_video.mp4)
 
+[youtube link](https://youtu.be/0ymQoeio_uI)
+
 Thanks to Shifeng's roommate Varun, for providing the warm light source during shooting.
 Thanks to Shifeng and Arnav for their talented act.
 
