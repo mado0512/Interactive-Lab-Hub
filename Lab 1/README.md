@@ -124,7 +124,7 @@ it aloud.
 
 **Are there things that seemed better on paper than when acted out?**
 
-*We are trying to include a **pulse rhyhm** mechanism in lighting, where frequency convey the current health status. However, we find it hard to implement with given lighting tool and short of staff when shooting the footage. We try switching back and forth between lighter green and darker green to simulate the effect, but the changes are subtle on camera.*
+*We are trying to include a **pulse rhyhm** mechanism in lighting, where frequency convey the current health status (e.g. You breath heavier, thus light pulse faster in low health). However, we find it hard to implement with given lighting tool and short of staff when shooting the footage. We try switching back and forth between lighter green and darker green to simulate the effect, but the changes are subtle on camera.*
 
 **Did new ideas about the piece surface once you were on your feet?**
 
