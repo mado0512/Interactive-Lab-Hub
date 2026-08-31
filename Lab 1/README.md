@@ -124,9 +124,19 @@ it aloud.
 
 **Are there things that seemed better on paper than when acted out?**
 
+*We are trying to include a **pulse rhyhm** mechanism in lighting, where frequency convey the current health status. However, we find it hard to implement with given lighting tool and short of staff when shooting the footage. We try switching back and forth between lighter green and darker green to simulate the effect, but the changes are subtle on camera.*
+
 **Did new ideas about the piece surface once you were on your feet?**
 
+*Arnav improvised an injection behavior when the character is reviving his health.*
+
 **Are there key moments in the interaction where things could go in a different direction?**
+
+Yes, there are multiple branches from the procedure shown. we will list some example below:
+1. If Arnav didn't take immediate coverage when his health status is at yellow, his indicator will turn red and game over.
+2. If Arnav didn't inject, his health status will remain yellow.
+3. If Arnav missed the shot on Shifeng, meaning the hit doesn't land on the indicator (the phone taped on chest), then Shifeng's indicator will stay green, not turning to red.
+
 Iterate your storyboards to capture key non-sequential aspects of the interaction. 
 
 ## Part C. Prototype the Light (light first!)
@@ -154,6 +164,8 @@ video feed of whichever scene you want to capture.)
 
 **Include your first attempts at recording the wizarded set-up here.**
 
+[link to markdown here](First attempts at wizarded set-up]
+
 ## Part E. (optional) Costume the Device
 
 Only now should you worry about what the device looks like. Costume your phone so it reads
@@ -176,9 +188,12 @@ who doesn't should come away understanding what it's famous for. How might you i
 
 **Include your video here.**
 
-**Please indicate who you collaborated with on this lab.** Be generous in
-acknowledging their contributions, and credit any other influences (YouTube,
-Github, Twitter, a friend who lent you a lamp) that informed your recreation.
+[link to final video here](Final video)
+
+**Please indicate who you collaborated with on this lab.**
+
+Thanks to Shifeng's roommate Varun, for providing the warm light source during shooting.
+Thanks to Shifeng and Arnav for their talented act.
 
 ---
 
