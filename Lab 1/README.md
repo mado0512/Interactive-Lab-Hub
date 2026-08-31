@@ -113,15 +113,7 @@ and calm for a bedroom?
 
 ## Part F. Record
 
-**Record your prototyped interaction as a video sketch.** Aim for the bar from
-the top of this lab: a viewer who knows the piece should recognize it; a viewer
-who doesn't should come away understanding what it's famous for. How might you illustrate the non-sequential aspects of the interaction in the sketch?
-
-**Include your video here.**
-
-[link to final video here](Final video)
-
-**Please indicate who you collaborated with on this lab.**
+[Part F video](final_video.mp4)
 
 Thanks to Shifeng's roommate Varun, for providing the warm light source during shooting.
 Thanks to Shifeng and Arnav for their talented act.
