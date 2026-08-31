@@ -2,9 +2,9 @@
 
 _This project is to be done in teams of 2._
 
-**NAME OF BOTH COLLABORATOR(S) HERE**
+Shifeng Hong & Arnav Whig
 
-**THE MASTERWORK YOU DREW FROM THE HAT:**
+Laser Tag
 
 ---
 
@@ -84,13 +84,23 @@ drew. Do real research. You are looking less for trivia than for the *shape of
 the interaction*:
 
 - What inputs are available to the user? What responses does the work give?
+  
+*Inputs are laser gun and health indicator. You get sound effect of laser gun firing, health indicator light change to reflect current health status*
+
 - Who is present, and how does the piece color the relationships between them?
+  
+*Multiple players can be present at a time. The health indicator turning red means another player is inflicting damage on current player.*
+
 - What is the piece famous for? What are its strengths and its weaknesses?
+
+*Laser tag is famous its commercial emergence from popular sci-fi at the time, namely Star Wars. The underline technology was inspired from military training. It is all-age friendly game with immediate feedback and flexible group sight. The weakness is that there is less granularity in scoring points, specifically, you can only land shot by shooting at the light receptor.*
 
   Sometimes the details of how the interaction worked are lost in history. Try filling it in with your imagination!
 
 **Describe your masterwork here, in your own words. What is the core interaction
 someone would recognize it by?**
+
+*Multiple players, each equiped with a laser gun and a light receptor (which also served as health indicator). Shots fired from laser gun that land on another player's receptor result in decreasing health, as reflected by the health indicator. Zero health player are eliminated and last one standing win.*
 
 ## Part A. Plan
 
@@ -98,12 +108,28 @@ For your masterwork, reconstruct the interaction as a scene:
 
 - **Setting:** Where and when does this interaction happen? (a jungle, a kitchen,
   a spaceship corridor, a nightclub, a harbor at night)
+
+  *The encounter went on a spaceship corridor, where lights are dimmed*
+  
 - **Players:** Who is involved? Who else is present? Think through everyone in
   the setting, not just the primary user.
+
+  *Two players were involved, no other present.*
+  
 - **Activity:** What is happening between the players and the light?
+
+   *Light from the health indicator could change color from other player's shooting.*
+  
 - **Goals:** What is each player trying to do?
 
+   *Each players are trying to eliminate the other, trying to bring light (the health indicator) from green, to yellow, and lastly to hopeless red.*
+
 **Describe your setting, players, activity, and goals here.**
+
+*The encounter went on a spaceship corridor, where lights are dimmed*
+*Two players were involved, no other present.*
+*Light from the health indicator could change color from other player's shooting.*
+*Each players are trying to eliminate the other, trying to bring light (the health indicator) from green, to yellow, and lastly to hopeless red.*
 
 Now **sketch a 3 storyboards** of the interaction you are recreating. (The number may depend on the thing you drew, but stretch your thinking!) They
 don't need to be beautiful, but they must capture and communicate not only the behavior of the light, but how it affects
@@ -111,6 +137,8 @@ and the people around it. If you're new to storyboarding, read
 [this explanation](https://www.nngroup.com/articles/storyboards-visualize-ideas/).
 
 **Include pictures of your storyboards here.**
+
+[Storyboards](link go here)
 
 Use the storyboards to decide what interaction to prototype.
 
