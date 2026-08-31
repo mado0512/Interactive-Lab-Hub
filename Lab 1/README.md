@@ -138,7 +138,7 @@ and the people around it. If you're new to storyboarding, read
 
 **Include pictures of your storyboards here.**
 
-[Storyboards](link go here)
+[Storyboards](storyboards.jpg)
 
 Use the storyboards to decide what interaction to prototype.
 
