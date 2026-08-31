@@ -128,7 +128,7 @@ it aloud.
 
 **Did new ideas about the piece surface once you were on your feet?**
 
-*Arnav improvised an injection behavior when the character is reviving his health.*
+*The revive mechanism is something new from the 1980s version, in addition, Arnav improvised an injection behavior when the character is reviving his health.*
 
 **Are there key moments in the interaction where things could go in a different direction?**
 
