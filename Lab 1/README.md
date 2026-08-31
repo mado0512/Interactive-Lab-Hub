@@ -1,87 +1,12 @@
 # Recreating the Masters of Interactive Light
 
-_This project is to be done in teams of 2._
-
 Shifeng Hong & Arnav Whig
 
 Laser Tag
 
----
-
-One way to understand greatness is to look to the greats. Just as painters learn
-the technique and artistry of the old masters by recreating their paintings, so
-too shall we come to understand computer-mediated interaction by recreating the
-interactive masterworks of our time.
-
-This week, every team will draw a different masterwork from a hat. Some are
-conceptual pieces, some are historical works, some are modern-day products —
-but they all share one thing: **their central mode of interaction is carried by
-light.** Think of Tinker Bell in the original stage production of *Peter Pan*,
-represented by nothing more than a darting circle of light from an off-stage
-mirror. There was no actor playing Tinker Bell; she existed entirely through the
-way the other characters interacted with that light.
-
-Your job is to recreate the *interaction* of the piece you drew — not to build a
-museum-grade replica, but to stage the moment that makes it what it is. Someone
-who knows your piece should watch your recreation and recognize it instantly.
-Someone who has never heard of it should walk away understanding what it is
-famous for.
-
-You will do this using the interaction staging techniques we will use all semester: a
-storyboard, some acting, a phone standing in as a controllable light (the
-*Tinkerbelle* tool), a hidden human "wizard" driving it, a costume, and a
-recorded video.
-
-*Make sure you read all the instructions and understand the whole activity
-before starting!*
-
-## Prep
-
-To start, you will need:
-
-1. Read about Git [here](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F).
-2. Set up your own Github "Lab Hub" by forking the [Interactive-Lab-Hub repository](https://github.com/IRL-CT/Interactive-Lab-Hub). To get lab updates, simply use [GitHub's "Sync fork" button](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) when new content is available.
-
-3. Set up your `README.md` so it has your name and links to this lab. Learn to
-   format a README [here](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-4. **Draw your masterwork from the hat and write it at the top of this file.**
-   Whatever you drew is yours — lean into it.
-
-## Materials
-
-For this lab you will need:
-
-1. Paper, markers/pens, scissors
-2. A smartphone with a browser that can display a webpage (your stand-in "light")
-3. A computer to host the control webpage
-4. Found objects and materials to **costume your phone so it looks like the
-   device in your masterwork** — doll clothes, a paper lantern, a bottle, foil,
-   a cardboard shell, whatever it takes. Be resourceful.
-
-## Deliverables
-
-Submit all of the following in this lab folder of your Lab Hub, as links or
-uploaded files. **Each group member posts their own copy to their own Github repo**, even if the work is
-shared.
-
-1. A short **research write-up** of your masterwork (what it is, when, who made
-   it, and — most importantly — what the interaction is)
-2. **3 iterated storyboards** of the interaction in the masterwork
-5. A **video sketch** of your prototyped interaction
-6. Any **reflections** on the process
-
-Labs are due on Mondays. Make sure this page is linked from your main class hub
-page.
-
----
-
 # The Report
 
 ## Part 0. Know Your Master
-
-Before you prototype anything, get intimately acquainted with the piece you
-drew. Do real research. You are looking less for trivia than for the *shape of
-the interaction*:
 
 - What inputs are available to the user? What responses does the work give?
   
@@ -95,12 +20,10 @@ the interaction*:
 
 *Laser tag is famous its commercial emergence from popular sci-fi at the time, namely Star Wars. The underline technology was inspired from military training. It is all-age friendly game with immediate feedback and flexible group sight. The weakness is that there is less granularity in scoring points, specifically, you can only land shot by shooting at the light receptor.*
 
-  Sometimes the details of how the interaction worked are lost in history. Try filling it in with your imagination!
-
 **Describe your masterwork here, in your own words. What is the core interaction
 someone would recognize it by?**
 
-*Multiple players, each equiped with a laser gun and a light receptor (which also served as health indicator). Shots fired from laser gun that land on another player's receptor result in decreasing health, as reflected by the health indicator. Zero health player are eliminated and last one standing win.*
+*Multiple players, each equipped with a laser gun and a light receptor (which also served as health indicator). Shots fired from laser gun that land on another player's receptor result in decreasing health, as reflected by the health indicator. Zero health player are eliminated and last one standing win.*
 
 ## Part A. Plan
 
@@ -140,15 +63,9 @@ and the people around it. If you're new to storyboarding, read
 
 [Storyboards](storyboards.jpg)
 
-Use the storyboards to decide what interaction to prototype.
-
 **Summarize the feedback you got here.**
 
 ## Part B. Act out the Interaction
-
-Physically act out the interaction you planned. For now, just pretend the light
-is doing what you've scripted — a person can wave a flashlight, or you can narrate
-it aloud.
 
 **Are there things that seemed better on paper than when acted out?**
 
@@ -168,20 +85,6 @@ Yes, there are multiple branches from the procedure shown. we will list some exa
 Iterate your storyboards to capture key non-sequential aspects of the interaction. 
 
 ## Part C. Prototype the Light (light first!)
-
-Use your smartphone as the light of your device. Open the browser on your phone
-to act as the "light," and use the remote control interface on your computer to
-change that light. Code and setup instructions for the *Tinkerbelle* tool are
-[here](https://github.com/IRL-CT/tinkerbelle) (we invented this tool for
-this lab). If you hit technical trouble, a manually or remotely controlled light
-switch, dimmer, or lamp is a fine substitute.
-
-**Get the light interaction working before anything else.** Your grade this week
-rides on the *light* being recognizable — the color, the rhythm, the timing, the
-way it answers a person. Only once your light interaction genuinely reads as your
-masterwork should you consider layering in a second modality (sound, vibration,
-motion). If in doubt, keep polishing the light. The other modalities are next
-week's business.
 
 ## Part D. Wizard the Device
 
