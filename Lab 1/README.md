@@ -54,13 +54,6 @@ For your masterwork, reconstruct the interaction as a scene:
 *Light from the health indicator could change color from other player's shooting.*
 *Each players are trying to eliminate the other, trying to bring light (the health indicator) from green, to yellow, and lastly to hopeless red.*
 
-Now **sketch a 3 storyboards** of the interaction you are recreating. (The number may depend on the thing you drew, but stretch your thinking!) They
-don't need to be beautiful, but they must capture and communicate not only the behavior of the light, but how it affects
-and the people around it. If you're new to storyboarding, read
-[this explanation](https://www.nngroup.com/articles/storyboards-visualize-ideas/).
-
-**Include pictures of your storyboards here.**
-
 [Storyboards](storyboards.jpg)
 
 **Summarize the feedback you got here.**
@@ -88,33 +81,7 @@ Iterate your storyboards to capture key non-sequential aspects of the interactio
 
 ## Part D. Wizard the Device
 
-Set up a "wizard" arrangement so one person can secretly drive the light while
-another acts with it — this is how you make the device feel alive without
-building any real electronics. (Zoom works well for recording; you can pin the
-video feed of whichever scene you want to capture.)
-
-**Include your first attempts at recording the wizarded set-up here.**
-
-[link to markdown here](first_attempts.mp4]
-
-
 https://github.com/user-attachments/assets/9693671e-1e2b-4672-b5b5-c59ecab835b6
-
-
-
-## Part E. (optional) Costume the Device
-
-Only now should you worry about what the device looks like. Costume your phone so it reads
-as the object from your masterwork — HAL's eye, a Simon shell, a paper-lantern
-Tinker Bell, an Ambient Orb, a lighthouse, a jack-o'-lantern, whatever you drew.
-
-Think about the world your device lives in: could that environment overheat it?
-Is water a danger? Does it need to be loud and bright for an emergency, or quiet
-and calm for a bedroom?
-
-**Include sketches/photos of what your device might look like here.**
-
-**What concerns or opportunities shaped the way you designed its look?**
 
 ## Part F. Record
 
