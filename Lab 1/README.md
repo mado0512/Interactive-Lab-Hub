@@ -108,8 +108,14 @@ videos, and give them reactions and feedback: tell them what you saw happening,
 guess the masterwork and the goals of the characters, and ask about anything that
 wasn't clear.
 
-**Who were the other groups you kibitzed with? Add links to their project pages here.**
-**Summarize the feedback you got from your partners here.**
+Partners:
+Group 1: Ammar Syed, Stephen Monahan https://github.com/ammarsyed/Interactive-Lab-Hub/tree/Fall2026/Lab%201
+Group 2: Gaurav PatelPallavi Khanna https://github.com/Gtpatel02/Interactive-Lab-Hub/blob/Fall2026/Lab%201/README.md
+Group 3: Neeha Ravula, Marisol Park https://github.com/neeharavula/Interactive-Lab-Hub/tree/Fall2026/Lab%201
+
+Summarized feedback:
+The Positives: It was easy to understand and the display of our art piece was done well.
+The Negatives: The green to yellow color transition was not very clear.
 
 ## Remix, Update, or Critique the Master
 
