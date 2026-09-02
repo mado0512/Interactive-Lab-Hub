@@ -117,7 +117,7 @@ Partners:
 
 Summarized feedback:
 - The Positives: It was easy to understand and the display of our art piece was done well.
-- The Negatives: The green to yellow color transition was not very clear.
+- The Negatives: The green to yellow color transition was not very clear. Improve readability of storyboard.
 
 ## Remix, Update, or Critique the Master
 
