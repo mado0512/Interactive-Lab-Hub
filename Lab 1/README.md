@@ -110,7 +110,9 @@ wasn't clear.
 
 Partners:
 Group 1: Ammar Syed, Stephen Monahan https://github.com/ammarsyed/Interactive-Lab-Hub/tree/Fall2026/Lab%201
+
 Group 2: Gaurav PatelPallavi Khanna https://github.com/Gtpatel02/Interactive-Lab-Hub/blob/Fall2026/Lab%201/README.md
+
 Group 3: Neeha Ravula, Marisol Park https://github.com/neeharavula/Interactive-Lab-Hub/tree/Fall2026/Lab%201
 
 Summarized feedback:
