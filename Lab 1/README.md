@@ -109,15 +109,15 @@ guess the masterwork and the goals of the characters, and ask about anything tha
 wasn't clear.
 
 Partners:
-Group 1: Ammar Syed, Stephen Monahan https://github.com/ammarsyed/Interactive-Lab-Hub/tree/Fall2026/Lab%201
+- Group 1: Ammar Syed, Stephen Monahan https://github.com/ammarsyed/Interactive-Lab-Hub/tree/Fall2026/Lab%201
 
-Group 2: Gaurav PatelPallavi Khanna https://github.com/Gtpatel02/Interactive-Lab-Hub/blob/Fall2026/Lab%201/README.md
+- Group 2: Gaurav PatelPallavi Khanna https://github.com/Gtpatel02/Interactive-Lab-Hub/blob/Fall2026/Lab%201/README.md
 
-Group 3: Neeha Ravula, Marisol Park https://github.com/neeharavula/Interactive-Lab-Hub/tree/Fall2026/Lab%201
+- Group 3: Neeha Ravula, Marisol Park https://github.com/neeharavula/Interactive-Lab-Hub/tree/Fall2026/Lab%201
 
 Summarized feedback:
-The Positives: It was easy to understand and the display of our art piece was done well.
-The Negatives: The green to yellow color transition was not very clear.
+- The Positives: It was easy to understand and the display of our art piece was done well.
+- The Negatives: The green to yellow color transition was not very clear.
 
 ## Remix, Update, or Critique the Master
 
