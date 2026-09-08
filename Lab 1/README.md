@@ -121,24 +121,21 @@ Summarized feedback:
 
 ## Remix, Update, or Critique the Master
 
-Now that you understand your masterwork from the inside, respond to it. Do the
-recreation again, but this time make it your own — pick one of these moves (or
-combine them):
+Video clips of us testing pulse animation
 
-1. **Remix the modality.** Your recreation no longer has to (just) use light. Use
-   vibration, sound, motion, heat — whatever best carries the interaction. Feel
-   free to fork and modify the Tinkerbelle code. (Add your updates to this lab's folder!)
-2. **Update it.** Redesign the piece for today's context, or for a setting its
-   creators never imagined (the piece with roommates in the room, with children
-   present, on a phone, in a car).
-3. **Fix its weaknesses.** You identified this master's strengths and weaknesses
-   in Part 0 — now address a weakness, or push a strength further.
+https://github.com/user-attachments/assets/74129c18-9e05-4ce7-a0ae-ceb2b13c81b9
 
-We will grade this second pass with an emphasis on **creativity** and on how well
-your response engages with what your master was really doing.
+Storyboard & Explanation of our renovation
 
-**Document everything here — especially the storyboard and video. Photos of the
-prototype are great too.**
+<img width="2641" height="1254" alt="interactive device" src="https://github.com/user-attachments/assets/f6e99d73-11a8-4e83-be07-23e75916b486" />
+
+Updated tinkerbell code
+
+[tinkerbelle.zip](https://github.com/user-attachments/files/31981130/tinkerbelle.zip)
+
+We added pulsing animation as well as sliders to control its intensity and speed.
+
+<img width="3024" height="1778" alt="Image 9-8-26 at 7 43 PM" src="https://github.com/user-attachments/assets/6ab9bc63-b198-4a4d-8ae7-a862f9999ac1" />
 
 ---
 
