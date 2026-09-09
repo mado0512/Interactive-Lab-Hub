@@ -137,6 +137,7 @@ We added pulsing animation as well as sliders to control its intensity and speed
 
 <img width="3024" height="1778" alt="Image 9-8-26 at 7 43 PM" src="https://github.com/user-attachments/assets/6ab9bc63-b198-4a4d-8ae7-a862f9999ac1" />
 
+[Link to final video](https://www.youtube.com/watch?v=5popPjk8BAU)
 ---
 
 
