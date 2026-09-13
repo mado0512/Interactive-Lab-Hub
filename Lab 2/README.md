@@ -195,7 +195,8 @@ One potential source of ideas might be thinking about other clocks and timekeepi
 Another might be novel units of time. How do you measure a year? [In daylights? In midnights? In cups of coffee?](https://www.youtube.com/watch?v=wsj15wPpjLY)
 
 We strongly discourage literal digital or analog clock display: Be creative.
-[clock_2.html](https://github.com/user-attachments/files/32167591/clock_2.html)
+
+[Ideation Demo](clock_2.html)
 
 **Put the names of the people you gave feedback to here. (Even better, add links to their repos here!)**
 
