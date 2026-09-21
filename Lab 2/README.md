@@ -216,7 +216,7 @@ From Jessica Chon: I think you picked a very thought provoking concept that has 
 
 From Jianing Li: The clock is useful for cutting down meaningless time spent on social media or video games. I'm wondering if there's a way to compensate for the delay, like, if you do some sports, the clock time will move faster to catch up the real time? Or do you want the delay to be permanent so that you become more cautious when you want to use social media? And also, do you think all time spent on TikTok and so on should all be seen as "a waste of time"? Maybe you can dive deeper into the thinking behind your idea in your report.
 
-From Arnav Whig:
+From Arnav Whig: Love the idea, however, they are many information on the screen, perhaps consider making the ui neater for user to see.
 
 ## Update your Lab Hub
 
