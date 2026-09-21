@@ -239,13 +239,9 @@ Do take advantage of having done the previous iteration to refine and simplify y
 
 <img width="1100" height="484" alt="image" src="https://github.com/user-attachments/assets/656c5c46-9de3-4f55-b81d-4e0ccc0d1b9c" />
 
-<img width="1191" height="547" alt="image" src="https://github.com/user-attachments/assets/006ccfb0-0f14-4787-a4c7-101c573b4f24" />
+<img width="1181" height="477" alt="image" src="https://github.com/user-attachments/assets/1aa3d4df-71e4-49aa-92c4-c1b9c44126b0" />
 
-\*\*\***Take a video of your PiClock.**\*\*\*
+[Link to video](https://youtu.be/wmlF2SZkMDg)
 
-
-As always, make sure you document contributions and ideas from others (and AI) explicitly in your writeup.
-
-You are permitted (but not required) to work in groups and share a turn in; you are expected to make equal contribution on any group work you do, and N people's group project should look like N times the work of a single person's lab.  Make sure the page for the group turn in is linked to your personal Interactive Lab Hub page. 
-
+Disclaimer: Microsoft copilot is used to write screen_clock.py. The original [clock](clock_2.html) is created using [Open Design](https://open-design.ai/zh/), then copilot was asked to port it onto raspberry pi.
 
