@@ -237,10 +237,9 @@ https://github.com/user-attachments/assets/4afccff0-9d43-46fe-8cf7-7df8ad3da960
 
 Do take advantage of having done the previous iteration to refine and simplify your design.
 
-** Insert any updates ideas, sketches, [Verplank diagrams](https://ccrma.stanford.edu/courses/250a-fall-2004/IDSketchbok.pdf))!, storyboards for your ideas **
+<img width="1100" height="484" alt="image" src="https://github.com/user-attachments/assets/656c5c46-9de3-4f55-b81d-4e0ccc0d1b9c" />
 
-
-\*\*\***Put a copy of your code in your Lab 2 Github repo.**\*\*\*
+<img width="1191" height="547" alt="image" src="https://github.com/user-attachments/assets/006ccfb0-0f14-4787-a4c7-101c573b4f24" />
 
 \*\*\***Take a video of your PiClock.**\*\*\*
 
