@@ -217,7 +217,7 @@ We strongly discourage literal digital or analog clock display: Be creative.
 
 Start small, pick just one element of your overall idea, just to show you have a handle on the code and components.
 
-\*\*\***Put a copy of your code in your Lab 2 Github repo.**\*\*\*
+[screen_clock.py](screen_clock.py)
 
 ## Make a short video of your modified barebones PiClock
 
