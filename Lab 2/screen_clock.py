@@ -67,6 +67,19 @@ def speak_time(now):
         pass
 
 
+def speak_stop_message():
+    if not sound_enabled or not speech_command:
+        return
+    try:
+        subprocess.Popen(
+            [speech_command, "-a", "200", "-s", "145", "Detected doom scrolling, time stopped moving!"],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        )
+    except OSError:
+        pass
+
+
 def point(cx, cy, radius, angle):
     radians = math.radians(angle - 90)
     return cx + math.cos(radians) * radius, cy + math.sin(radians) * radius
@@ -172,6 +185,8 @@ try:
                 paused_since = time.monotonic() if paused else None
                 if not paused:
                     last_spoken_minute = None
+                else:
+                    speak_stop_message()
                 last_button_time = current_time
             elif not button_b.value:
                 sound_enabled = not sound_enabled
