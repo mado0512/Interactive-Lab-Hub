@@ -200,6 +200,10 @@ We strongly discourage literal digital or analog clock display: Be creative.
 
 **Put the names of the people you gave feedback to here. (Even better, add links to their repos here!)**
 
+Jessica Chon
+Arnav Whig
+Jianing Li
+
 # Lab 2 Part 2
 
 ## Prep 
@@ -207,7 +211,12 @@ We strongly discourage literal digital or analog clock display: Be creative.
 1. Pick up remaining parts for kit on Wednesday lab class. Check the updated [parts list inventory](partslist.md) and let the TA know if there is any part missing.
 
 2. Look at and give feedback on the Part E. for at least 3 other people in the class and get 3 people to comment on your Part E!)
-**Put the feedback for your ideas here.**
+   
+From Jessica Chon: I think you picked a very thought provoking concept that has so much potential to not just be a time-keeping piece, but also a social commentary. You could really lean into the concept by including signs of deterioration (dust, clock glass cracking, spider webs) to show the degradation. As for your sound, I think the ticking is innately stressful, so you could have it gradually fade in during the pausing state to signal users that time is indeed ticking and they may be wasting it!
+
+From Jianing Li: The clock is useful for cutting down meaningless time spent on social media or video games. I'm wondering if there's a way to compensate for the delay, like, if you do some sports, the clock time will move faster to catch up the real time? Or do you want the delay to be permanent so that you become more cautious when you want to use social media? And also, do you think all time spent on TikTok and so on should all be seen as "a waste of time"? Maybe you can dive deeper into the thinking behind your idea in your report.
+
+From Arnav Whig:
 
 ## Update your Lab Hub
 
@@ -217,30 +226,20 @@ We strongly discourage literal digital or analog clock display: Be creative.
 
 Start small, pick just one element of your overall idea, just to show you have a handle on the code and components.
 
-\*\*\***Put a copy of your code in your Lab 2 Github repo.**\*\*\*
+[screen_clock.py](screen_clock.py)
 
 ## Make a short video of your modified barebones PiClock
 
-\*\*\***Take a video of your barely modified PiClock.**\*\*\*
+https://github.com/user-attachments/assets/4afccff0-9d43-46fe-8cf7-7df8ad3da960
 
-After you edit and work on the scripts for Lab 2, the files should be upload back to your own GitHub repo! You can push to your personal github repo by adding the files here, commiting and pushing.
-
-```
-(venv) pi@raspberrypi:~/Interactive-Lab-Hub/Lab 2 $ git add .
-(venv) pi@raspberrypi:~/Interactive-Lab-Hub/Lab 2 $ git commit -m 'your commit message here'
-(venv) pi@raspberrypi:~/Interactive-Lab-Hub/Lab 2 $ git push
-```
-
-After that, Git will ask you to login to your GitHub account to push the updates online, you will be asked to provide your GitHub user name and password. Remember to use the "Personal Access Tokens" you set up in Part A as the password instead of your account one! Go on your GitHub repo with your laptop, you should be able to see the updated files from your Pi!
 
 ## Now, make your own PiClock
 
 Do take advantage of having done the previous iteration to refine and simplify your design.
 
-** Insert any updates ideas, sketches, [Verplank diagrams](https://ccrma.stanford.edu/courses/250a-fall-2004/IDSketchbok.pdf))!, storyboards for your ideas **
+<img width="1100" height="484" alt="image" src="https://github.com/user-attachments/assets/656c5c46-9de3-4f55-b81d-4e0ccc0d1b9c" />
 
-
-\*\*\***Put a copy of your code in your Lab 2 Github repo.**\*\*\*
+<img width="1191" height="547" alt="image" src="https://github.com/user-attachments/assets/006ccfb0-0f14-4787-a4c7-101c573b4f24" />
 
 \*\*\***Take a video of your PiClock.**\*\*\*
 
