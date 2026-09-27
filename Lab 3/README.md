@@ -158,8 +158,8 @@ Speak, pause, and watch it transcribe. Now change the endpointing threshold — 
 ```
 
 \*\***Try both extremes, and something in between. Describe what each one feels like to talk to. Note specifically: at 0.2s, what kinds of normal speech get cut off? At 1.5s, what does the delay make the system seem like?**\*\*
-
-There is no correct value. A system that takes drink orders and a system that listens to someone think out loud want very different thresholds, and the right one depends on what your users are doing with their pauses.
+<img width="1040" height="622" alt="image" src="https://github.com/user-attachments/assets/465bc0e7-1d4e-4715-a273-223c9485a002" />
+The 1.5 version record full sentence, allow natural pause. The 0.2 cut off even on normal sentence, might be more suitable for a drink order machine. The 0.7 cut off on natural pause. 1.5 and 0.7 are better for natural dialogue, with 0.7 sounds like a impatient friend.
 
 ### The complete loop
 
@@ -174,6 +174,9 @@ There is no correct value. A system that takes drink orders and a system that li
 Storyboard and/or use a Verplank diagram to design a speech-enabled device. (Stuck? Make a device that talks for dogs. If that is too stupid, find an application that is better than that.)
 
 \*\***Post your storyboard and diagram here.**\*\*
+<img width="3053" height="2292" alt="image" src="https://github.com/user-attachments/assets/7eec1117-758b-4f6f-8fce-8ad80d10e27e" />
+
+<img width="2818" height="2823" alt="image" src="https://github.com/user-attachments/assets/6dd6f48c-dabc-4b7b-b9a8-40915bcf4bb7" />
 
 Write out what you imagine the dialogue to be. Use cards, post-its, or whatever method helps you develop alternatives or group responses.
 
