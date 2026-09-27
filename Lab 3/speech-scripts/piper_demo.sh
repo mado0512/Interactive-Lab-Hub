@@ -7,6 +7,7 @@
 
 set -euo pipefail
 VOICES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)/voices"
+AUDIO_DEVICE="${AUDIO_DEVICE:-plughw:CARD=UACDemoV10,DEV=0}"
 
 # List everything available (there are a lot, in many languages):
 #   python3 -m piper.download_voices
@@ -20,7 +21,7 @@ python3 -m piper \
   --data-dir "$VOICES_DIR" \
   --output-file welcome.wav \
   -- "Welcome to the world of speech synthesis."
-aplay welcome.wav
+aplay -D "$AUDIO_DEVICE" welcome.wav
 
 # Stream straight to the speaker instead — lower latency, because playback
 # starts before the whole sentence is synthesized. Listen for the difference.
@@ -29,7 +30,7 @@ python3 -m piper \
   --data-dir "$VOICES_DIR" \
   --output-raw \
   -- "This sentence is spoken first. This one is synthesized while you hear it." \
-  | aplay -r 22050 -f S16_LE -t raw -
+  | aplay -D "$AUDIO_DEVICE" -r 22050 -f S16_LE -t raw -
 
 # Same text, slower and quieter — Piper exposes prosody knobs:
 python3 -m piper \
@@ -39,4 +40,4 @@ python3 -m piper \
   --volume 0.6 \
   --output-raw \
   -- "And this is what it sounds like when I slow down." \
-  | aplay -r 22050 -f S16_LE -t raw -
+  | aplay -D "$AUDIO_DEVICE" -r 22050 -f S16_LE -t raw -
