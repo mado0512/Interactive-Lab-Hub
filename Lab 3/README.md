@@ -138,7 +138,7 @@ Available sizes, smallest first: `tiny.en`, `base.en`, `small.en`, `medium.en`. 
 **base.en** balance between delay and accuracy. For a system that has to answer you, missing a comma wouldn't be issue.
 
 \*\***Write your own script that verbally asks for a numerical input (a phone number, zipcode, number of pets) and records the answer the respondent provides.**\*\* Numbers are a good stress test — transcription systems make characteristic errors on digit strings, and you will want to know what they are before you design around them.
-
+[ask_number](speech-scripts/ask_number.sh)
 ## C. Turn-taking: knowing when someone has stopped talking
 
 Everything so far has worked on fixed audio files. A real conversational device does not get told when to start and stop recording — it has to decide. This is the problem that makes speech interfaces hard, and it is mostly not a speech recognition problem.
