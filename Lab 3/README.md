@@ -180,9 +180,8 @@ Storyboard and/or use a Verplank diagram to design a speech-enabled device. (Stu
 
 Write out what you imagine the dialogue to be. Use cards, post-its, or whatever method helps you develop alternatives or group responses.
 
-\*\***Please describe and document your process.**\*\*
-
-Your script should include the pauses. Where does your device wait, and for how long? You now know from Part C that this is a parameter you have to choose, not something that happens for free.
+<img width="4536" height="8064" alt="IMG_6842" src="https://github.com/user-attachments/assets/5e53de0f-cbac-4230-af69-f7b9f63acef8" />
+On occasion of silence, the VAD should wait up to 5 seconds, then the box will speak on its own, asking "is anyone there?".
 
 ## E. Acting out the dialogue
 
