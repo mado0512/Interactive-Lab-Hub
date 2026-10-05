@@ -186,9 +186,10 @@ On occasion of silence, the VAD should wait up to 5 seconds, then the box will s
 ## E. Acting out the dialogue
 
 Find a partner, and *without sharing the script with your partner* try out the dialogue you've designed, where you (as the device designer) act as the device you are designing. Please record this interaction (for example, using Zoom's record feature).
+
+
 [video](https://youtu.be/IDa1cwQhbnY)
 
-\*\***Describe if the dialogue seemed different than what you imagined when it was acted out, and how.**\*\*
 The dialogue diverge from script when the user ask me to explain which planet I am from, this is something that I did not have a response prepared for, so I have to improvise and guide him to say the things that is in the designed flow.
 
 ---
