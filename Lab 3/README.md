@@ -42,6 +42,19 @@ Arnav Whig (aw966)
 
 For Part 2, you will redesign the interaction with the speech-enabled device using the data collected, as well as feedback from part 1.
 
+## Instruction to run the code
+
+`bash
+cd ~/sphinx-share
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -r requirements-share.txt
+bash speech-scripts/setup.sh
+export DEEPSEEK_API_KEY="<fill your API KEY here>"
+python3 alien_speak.py
+`
+
 ## Prep for Part 2
 
 *Document how the system works.*
@@ -70,13 +83,13 @@ Try to get at least two people to interact with your system. (Ideally, you would
 Answer the following:
 
 ### What worked well about the system and what didn't?
-\*\**your answer here*\*\*
+> The rating interface is straightforward and intuitive. We think the experience of describe-and-draw to a machine is an interesting experience, all participants reflects that being "fun". However, the system prompt and routine is not polished such that there is a limited set of hardcoded question and user can't not ask for more challenge when they complete the three questions. A system that work well should allows more extensive interaction. Also, the rating guideline is not clear such that, user displaying the wrong drawing could still receive high rating.
 
 ### What worked well about the controller and what didn't?
-\*\**your answer here*\*\*
+> The camera work surprisingly well, and the microphone pick up at a larger range than we thought. However, the transcription quality could be improved as we see that a majority of time our voice input is transcribed partially wrong, which is negative toward user experience. The frame rate of camera could be improved so we captured a more information rich footage and enable more natural UX experience. Currently, the system relies on taking three equal-interval (during speech recording) screenshots of the camera input to observe the user.
 
 ### What lessons can you take away from the WoZ interactions for designing a more autonomous version of the system?
-> In fact, this system here is fully autonomous! However, We imagined there could be more visual instruction so we don't need to remind the participant what to do!
+> In fact, this system here is fully autonomous! However, We imagined there could be more visual instruction so we don't need to remind the participant what to do, and we design the system with rigid protocol for generating drawing quest and rating guideline so it is not limited to the set of hardcoded question right now. In addition, we think the comment that machine gave could be more characteristic to make the system engaging.
 
 ### How could you use your system to create a dataset of interaction? What other sensing modalities would make sense to capture?
 > This system could decompose the video recording into many information: facial expression of user (their emotion toward system's prompt, system's comment on their drawing, are they comfortable engaging with the system), voice recording (what did the user actually say, sentimental analysis, what is their altitude toward the system and the system's feedback on their drawing, is any part of the system's prompt confusing them) and of course, the drawing they make (how was the quality, did they misinterpret the system's prompt, is the system's judgement fair, is the system bias toward certain visual input). Other sensing modalities that is worth capturing is user's gaze trace, which can be achieve via a eye-tracking device. This device would generate a heatmap of where user is gazing on the screen; this is helpful for improving interface design.
