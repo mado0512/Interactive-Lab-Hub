@@ -45,6 +45,7 @@ For Part 2, you will redesign the interaction with the speech-enabled device usi
 ## Prep for Part 2
 
 *Document how the system works.*
+<img width="4139" height="3104" alt="Storyboard" src="https://github.com/user-attachments/assets/74d86903-65b2-4200-a006-10f616c8e755" />
 
 *Include videos or screen captures of both the system and the controller.*
 
