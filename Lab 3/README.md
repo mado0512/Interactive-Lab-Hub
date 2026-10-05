@@ -67,7 +67,7 @@ Answer the following:
 \*\**your answer here*\*\*
 
 ### What lessons can you take away from the WoZ interactions for designing a more autonomous version of the system?
-\*\**your answer here*\*\*
+> In fact, this system here is fully autonomous! However, We imagined there could be more visual instruction so we don't need to remind the participant what to do!
 
 ### How could you use your system to create a dataset of interaction? What other sensing modalities would make sense to capture?
-\*\**your answer here*\*\*
+> This system could decompose the video recording into many information: facial expression of user (their emotion toward system's prompt, system's comment on their drawing, are they comfortable engaging with the system), voice recording (what did the user actually say, sentimental analysis, what is their altitude toward the system and the system's feedback on their drawing, is any part of the system's prompt confusing them) and of course, the drawing they make (how was the quality, did they misinterpret the system's prompt, is the system's judgement fair, is the system bias toward certain visual input). Other sensing modalities that is worth capturing is user's gaze trace, which can be achieve via a eye-tracking device. This device would generate a heatmap of where user is gazing on the screen; this is helpful for improving interface design.
