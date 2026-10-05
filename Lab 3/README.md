@@ -52,6 +52,7 @@ python -m pip install --upgrade pip
 python -m pip install -r requirements-share.txt
 bash speech-scripts/setup.sh
 export DEEPSEEK_API_KEY="<fill your API KEY here>"
+cd speech-scripts
 python3 alien_speak.py
 `
 
