@@ -12,13 +12,13 @@ Arnav Whig (aw966)
 ## B. Speech to Text
 
 <img width="952" height="788" alt="image" src="https://github.com/user-attachments/assets/fb63feb0-6398-4f08-b8c9-dc403d6fc9b3" />
-**base.en** balance between delay and accuracy. For a system that has to answer you, missing a comma wouldn't be issue.
+> **base.en** balance between delay and accuracy. For a system that has to answer you, missing a comma wouldn't be issue.
 
 [ask_number](speech-scripts/ask_number.sh)
 ## C. Turn-taking: knowing when someone has stopped talking
 
 <img width="1040" height="622" alt="image" src="https://github.com/user-attachments/assets/465bc0e7-1d4e-4715-a273-223c9485a002" />
-The 1.5 version record full sentence, allow natural pause. The 0.2 cut off even on normal sentence, might be more suitable for a drink order machine. The 0.7 cut off on natural pause. 1.5 and 0.7 are better for natural dialogue, with 0.7 sounds like a impatient friend.
+> The 1.5 version record full sentence, allow natural pause. The 0.2 cut off even on normal sentence, might be more suitable for a drink order machine. The 0.7 cut off on natural pause. 1.5 and 0.7 are better for natural dialogue, with 0.7 sounds like a impatient friend.
 
 ## D. Storyboard
 
@@ -27,13 +27,14 @@ The 1.5 version record full sentence, allow natural pause. The 0.2 cut off even 
 <img width="2818" height="2823" alt="image" src="https://github.com/user-attachments/assets/6dd6f48c-dabc-4b7b-b9a8-40915bcf4bb7" />
 
 <img width="4536" height="8064" alt="IMG_6842" src="https://github.com/user-attachments/assets/5e53de0f-cbac-4230-af69-f7b9f63acef8" />
-On occasion of silence, the VAD should wait up to 5 seconds, then the box will speak on its own, asking "is anyone there?".
+
+> On occasion of silence, the VAD should wait up to 5 seconds, then the box will speak on its own, asking "is anyone there?".
 
 ## E. Acting out the dialogue
 
 [video](https://youtu.be/IDa1cwQhbnY)
 
-The dialogue diverge from script when the user ask me to explain which planet I am from, this is something that I did not have a response prepared for, so I have to improvise and guide him to say the things that is in the designed flow.
+> The dialogue diverge from script when the user ask me to explain which planet I am from, this is something that I did not have a response prepared for, so I have to improvise and guide him to say the things that is in the designed flow.
 
 ---
 
@@ -42,18 +43,6 @@ The dialogue diverge from script when the user ask me to explain which planet I 
 For Part 2, you will redesign the interaction with the speech-enabled device using the data collected, as well as feedback from part 1.
 
 ## Prep for Part 2
-
-1. What are concrete things that could use improvement in the design of your device? For example: wording, timing, anticipation of misunderstandings.
-2. What are other modes of interaction *beyond speech* that you might also use to clarify how to interact? In particular: how does someone know when the device is listening, and when it is thinking? You have a screen and an LED.
-3. Make a new storyboard, diagram and/or script based on these reflections.
-4. (optional) Integrate [input devices](inputs.md) in the system
-
-## Prototype your system
-
-The system should:
-* use the Raspberry Pi
-* use one or more sensors
-* require participants to speak to it
 
 *Document how the system works.*
 
@@ -76,13 +65,3 @@ Answer the following:
 
 ### How could you use your system to create a dataset of interaction? What other sensing modalities would make sense to capture?
 \*\**your answer here*\*\*
-
-<details>
-  <summary><strong>Submission Cleanup Reminder (Click to Expand)</strong></summary>
-
-  **Before submitting your README.md:**
-  - This readme.md file has a lot of extra text for guidance.
-  - Remove all instructional text and example prompts from this file.
-  - You may either delete these sections or use the toggle/hide feature in VS Code to collapse them for a cleaner look.
-  - Your final submission should be neat, focused on your own work, and easy to read for grading.
-</details>
