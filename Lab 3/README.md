@@ -68,8 +68,8 @@ Rating of drawings
 Camera (pointing at the participant) and speaker
 <img width="4536" height="8064" alt="IMG_6898" src="https://github.com/user-attachments/assets/7ef0e65f-cdb3-4e86-b16b-47f69110703d" />
 
-*Include videos or screen captures of both the system and the controller.*
-
+The system take *three* equally spaced screenshot from streaming camera input and feed to the AI along with visual prompt
+<img width="1637" height="1192" alt="Screenshot 2026-10-04 at 9 54 55 PM" src="https://github.com/user-attachments/assets/b880b83f-ef81-4948-83a5-94ffa385870c" />
 
 > User study 1 was done in class with Professor and another teammate. Unfortunately, no footage was recorded.
 > Here is another footage of complete user study showcasing the system and the controller.
