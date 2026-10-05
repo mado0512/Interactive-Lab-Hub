@@ -46,7 +46,14 @@ For Part 2, you will redesign the interaction with the speech-enabled device usi
 
 *Document how the system works.*
 
-*Include videos or screencaptures of both the system and the controller.*
+*Include videos or screen captures of both the system and the controller.*
+
+
+User study 1 was done in class with Professor and another teammate. Unfortunately, no footage was recorded.
+
+Here is another footage of complete user study showcasing the system and the controller.
+
+<img width="360" height="640" alt="8FFA353C-79C1-4C1D-AB89-232D5D7B5847_4_5005_c" src="https://github.com/user-attachments/assets/83c76577-7b29-4aa9-a470-6181c8af7b20" />
 
 ## Test the system
 
