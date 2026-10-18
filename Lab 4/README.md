@@ -573,10 +573,14 @@ Questions to consider:
 
 How does your chosen sensor or input shape the physical response?
 > In my case, sensing distance require that the knocking action doesn't propagate to where the sensor is mounted.
+
+
 How does the physical arrangement of the sensor and actuator change the interaction?
 > The current sensing require people to pour tea right in front of the machine arm. This is not natural but we are currently constraint by the sensor available.
-What thresholds, timing, or movement patterns make the interaction feel clear or playful(What changes when you adjust the sensor placement or servo motion?)?
-> The distance threhold is tuned to activate at a natural distance of pouring tea. Another important parameter is the sweep speed of machine arm. I landed on `0.004`. In my experiment, `0.008` is too slow and machine like; if a real person is doing that, he/she is arrogant and disrespectful. A speed of `0.002` is too fast, almost scary.
+
+
+What thresholds, timing, or movement patterns make the interaction feel clear or playful(What changes when you adjust the sensor placement or servo motion)?
+> The distance threshold is tuned to activate at a natural distance of pouring tea. Another important parameter is the sweep speed of machine arm. I landed on `0.004`. In my experiment, `0.008` is too slow and machine like; if a real person is doing that, he/she is arrogant and disrespectful. A speed of `0.002` is too fast, almost scary.
 
 ---
 
