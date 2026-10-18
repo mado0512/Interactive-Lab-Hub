@@ -13,14 +13,9 @@
 </details>
 
 ---
-
----
-
 ## Lab Overview
-Team: <canvas group name>  
-Members: Full Name (netid, github-handle), ...  
-Clock name: <name>
-
+Team: N/A
+Members: Shifeng Hong (sh2769 / mado0512) 
 
 For lab this week, we focus on both sensing and actuation, bringing new modes of input and output into your devices, while also prototyping the physical structure and overall look of the device. You will consider how the physical form supports sensing and actuation, and how these elements come together to shape the interaction and aesthetics of the device.
 
@@ -286,13 +281,38 @@ As you develop your Feast Automata concept, consider where the sensor and actuat
 
 **\*\*\*Draw 5 sketches that explore different physical arrangements for your sensing and actuation.\*\*\***
 
-**\*\*\*What questions do these sketches raise? What do you need to physically prototype to answer them?\*\*\***
+<img width="1912" height="2328" alt="扫描全能王 10-14-26 00 52_1" src="https://github.com/user-attachments/assets/b0e8c711-5bf2-47e8-8eba-cb0e102585ed" />
+Above are four sketches (the fifth one below) that I did to explore how on using sensing and actuation in *feast automata*.
+
+1. The first one is a tea knocker. It is a custom to knock on table when someone else fill tea for you in Chinese culture. This machine use servo to demonstrate the tapping behavior and use capacitive sensing to detect if the user is knocking correctly. This one has question of how to hide wiring, perhaps it should be disguised as a platform where the user will knock on. Another thing is how can we accurately detect knocking and knocking frequency.
+
+2. The second one is a coffee aroma spreader. Coffee can be used to remove odor in kitchen. This machine use serve with fan-piece attached to create wind with back-and-forth motion, and it use a proximity sensor to detect if anyone is nearby, it stop the swining motion when user is nearby. The question raised here is **proper concealment**. That is, how to avoid dangling wire and any electronic that might be exposed without cover? Since this device will be deployed near a pot of hot coffee, we need physical prototype to protect any liquid spill or hot steam.
+
+3. The third one is a versatile timer that take inspiration from traditional rotate-and-set kitchen timer. It use rotary sensor to allow user to set timer duration. And the interesting part is using serve arm to simulate analog clock needle. The question raised here is how should serve clock needle represent analog clock and whether rotary encoder is too small to allow user to enter time in a controllable manner. Physical prototype of clock face and enlarged knob needs to be explored.
+
+4. The fourth design is a meat flipper. It is used to remind user when to flip steak to reach perfect grill. It plan to use servo arm as a visual suggestion of flipping and rotary sensor as input to interact with timer. It will be interesting to explore 3D printing a miniature of cooking fork to simulate the flipping.
 
 **\*\*\*Pick one design to prototype and explain why.\*\*\***
+<img width="2280" height="1780" alt="扫描全能王 10-14-26 00 52_2" src="https://github.com/user-attachments/assets/ae8b0483-7514-4d92-b85b-101bedd2ea46" />
+<img width="2440" height="1848" alt="扫描全能王 10-14-26 00 52_3" src="https://github.com/user-attachments/assets/70ec4237-5763-46b7-bfbf-b3ff3e917274" />
+
+This is the fifth design, this is also the one I choose to prototype at the moment. This design is heavily inspired by modern day coffee machine and the design of [Luce from Ferrari by John Ive](https://www.youtube.com/watch?v=DP7vVve0jGc). Specifically, it aims to explore the synergy between digital display and analog hardware. This is a flexible interface that can be used to display ranges of information. The big handle on the bottom right corner are built with rotary encoder. The enlarged handle are used for simplified toggling between several option instead of precise rotation. There is an auxiliary OLED display built into the handle to display current selection or other information. Servo arm is again used as a analog dashboard needle, where it interact with the Adafruit miniPiTFT display.
+
+The main reason why I choose to prototype this is that it explore an interesting topic, and has potential beyond the current theme of "Feast Automata".
+
+The questions raised here are placement and fixation of component in space (especially servo), wire management (between rotary encoder and OLED display), and power supply. The board along might not have enough power supply to drive both the servo and the two display.
 
 Build a cardboard or other low-fidelity physical prototype of your design.
-
-**\*\*\*Document your rough prototype with photos and/or video.\*\*\***
+<img width="4536" height="8064" alt="IMG_6942" src="https://github.com/user-attachments/assets/5a72eb0d-2cab-4cab-8060-7432c480ae32" />
+<img width="4536" height="8064" alt="IMG_6943" src="https://github.com/user-attachments/assets/abb41d52-9ab9-4335-a02c-e892eb8d117f" />
+<img width="2268" height="4032" alt="IMG_6944" src="https://github.com/user-attachments/assets/1179e38f-b172-4f70-9f5e-472295ec30d7" />
+<img width="2268" height="4032" alt="IMG_6945" src="https://github.com/user-attachments/assets/55ba6ca1-bb14-4c29-92ac-e55dd08b45aa" />
+<img width="4536" height="8064" alt="IMG_6956" src="https://github.com/user-attachments/assets/221b5b9a-5bac-42cb-a28d-c34e0d8be30d" />
+<img width="4536" height="8064" alt="IMG_6957" src="https://github.com/user-attachments/assets/1b399045-86f3-461c-9a95-77430a6c1bfa" />
+<img width="4536" height="8064" alt="IMG_6958" src="https://github.com/user-attachments/assets/f2e06111-2007-4636-b074-7a25ad1a3124" />
+<img width="4536" height="8064" alt="IMG_6959" src="https://github.com/user-attachments/assets/b8901e0e-3bfb-4e45-a3c4-82fa0d530231" />
+<img width="2268" height="4032" alt="IMG_6960" src="https://github.com/user-attachments/assets/04bf2ff8-d12f-4f5f-ad2a-0b07d7e44d0f" />
+<img width="4536" height="8064" alt="IMG_6961" src="https://github.com/user-attachments/assets/ab3b5b1d-c744-4ebc-a75a-041e647f4342" />
 
 ---
 
