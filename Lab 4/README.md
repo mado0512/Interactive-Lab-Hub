@@ -541,6 +541,8 @@ Middle finger is different, it is extended straight while others are curl in the
 Two sensors are involved: servo for performing the "knocking" action by pulling a string; proximity sensor for sensing "tea serving" by setting a distance threshold. When tea is served, volume of tea pot has a specific distance from the proximity sensor.
 
 I first prototype the servo mechanism by having it open and close lid on box.
+
+
 https://github.com/user-attachments/assets/693cf066-4b52-4649-95f5-91759c11cbf5
 
 
