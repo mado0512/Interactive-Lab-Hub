@@ -546,10 +546,16 @@ I first prototype the servo mechanism by having it open and close lid on box.
 https://github.com/user-attachments/assets/693cf066-4b52-4649-95f5-91759c11cbf5
 
 
-
+I also added a rubber band below the middle finger to give a natural rebounce.
+![alt text](IMG_7029.jpeg)
 
 The proximity sensor is not particularly accurate for caputuring object beyond 15cm. Through trial and error, I determined that a `distance_threshold = 9` is a good heurisitc.
-![alt text](IMG_7028.jpeg)
+![alt text](image.png)
+
+
+#### Acts Like
+
+When people pour tea into the cup in front of machine, the machine will perform the knocking action while tea is pouring. The machine should stop when pouring is done (when its front is clear).
 
 
 ---
