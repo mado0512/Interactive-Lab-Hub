@@ -506,10 +506,47 @@ This is a playful way to visualize how the expander works, but the same techniqu
 
 ### Final Documentation
 
+My final documentation pivoted from previous prototype. This is because one of the core design require the adafruit display screen, which is currently not possible to be used together along with servo.
+
+Topic: "Machine with Manner"
+
+> It is a traditional manner in Canton area (my hometown) to knock on the table lightly when being served tea from others. I want to record this manner in machine.
+
 Document all the prototypes and iterations you have designed and worked on! Again, deliverables for this lab are writings, sketches, photos, and videos that show what your prototype:
 * "Looks like": shows how the device should look, feel, sit, weigh, etc.
 * "Works like": shows what the device can do
 * "Acts like": shows how a person would interact with the device
+
+
+
+#### Look Like
+
+The prototype should look like the hand and forearm of a human beings.
+
+It will have physical structure of palm and two bones for forearm.
+![alt text](IMG_7007.jpeg)
+![alt text](IMG_7008.jpeg)
+I constructed the forearm using two rolled-up tube andh napkin wrapped around the front-end. Notice that the two tubes have different end radius. This is to simulate real human beings bone.
+![alt text](IMG_7011.jpeg)
+I traced my palm shape onto a paper and cut it out. I also use paper roll to simulate real thumb temdom, this help simulate curl of thumb inward.
+![alt text](IMG_7012.jpeg)
+Similarly, similar structure were added on pinky and ring finger.
+![alt text](IMG_7013.jpeg)
+Middle finger is different, it is extended straight while others are curl in the gesture, I added a popsicle stick to mount that.
+![alt text](IMG_7017.jpeg)
+![alt text](IMG_7027.jpeg)
+
+#### Works Like
+
+Two sensors are involved: servo for performing the "knocking" action by pulling a string; proximity sensor for sensing "tea serving" by setting a distance threshold. When tea is served, volume of tea pot has a specific distance from the proximity sensor.
+
+I first prototype the servo mechanism by having it open and close lid on box.
+<testing on box]
+
+
+The proximity sensor is not particularly accurate for caputuring object beyond 15cm. Through trial and error, I determined that a `distance_threshold = 9` is a good heurisitc.
+![alt text](IMG_7028.jpeg)
+
 
 ---
 
