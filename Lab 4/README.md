@@ -560,6 +560,24 @@ When people pour tea into the cup in front of machine, the machine will perform 
 
 https://github.com/user-attachments/assets/a4a1d16a-a5a1-409d-9d01-a3859cfd697d
 
+
+
+A simple interaction diagram or sketch showing how sensing and actuation are connected
+![alt text](image-1.png)
+
+Written reflection: What did you learn about connecting sensing, movement, and physical form? What was fun, surprising, or challenging?
+
+> The challenging part is to recreate motion path of the knocking action. It is influenced by servo placement, length of string and speed of serve speed. I also find that if I mount the proximity sensor of the *palm*, the knocking action will interrupt sensing. Luckily, I have the forearm and palm isolated, so the knocking motion of palm has minimal effect on forearm, where I mounted my sensor. This is an example of how sensing,movement and physical form are connected. Physical form and movement informed design of each other.
+
+Questions to consider:
+
+How does your chosen sensor or input shape the physical response?
+> In my case, sensing distance require that the knocking action doesn't propagate to where the sensor is mounted.
+How does the physical arrangement of the sensor and actuator change the interaction?
+> The current sensing require people to pour tea right in front of the machine arm. This is not natural but we are currently constraint by the sensor available.
+What thresholds, timing, or movement patterns make the interaction feel clear or playful(What changes when you adjust the sensor placement or servo motion?)?
+> The distance threhold is tuned to activate at a natural distance of pouring tea. Another important parameter is the sweep speed of machine arm. I landed on `0.004`. In my experiment, `0.008` is too slow and machine like; if a real person is doing that, he/she is arrogant and disrespectful. A speed of `0.002` is too fast, almost scary.
+
 ---
 
 ## Deliverables \& Submission for Lab 4
