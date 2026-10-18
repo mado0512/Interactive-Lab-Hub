@@ -571,6 +571,8 @@ How does the physical arrangement of the sensor and actuator change the interact
 What thresholds, timing, or movement patterns make the interaction feel clear or playful(What changes when you adjust the sensor placement or servo motion)?
 > The distance threshold is tuned to activate at a natural distance of pouring tea. Another important parameter is the sweep speed of machine arm. I landed on `0.004`. In my experiment, `0.008` is too slow and machine like; if a real person is doing that, he/she is arrogant and disrespectful. A speed of `0.002` is too fast, almost scary.
 
+<img width="4032" height="2268" alt="IMG_7031" src="https://github.com/user-attachments/assets/71321bc5-5421-4eb4-b029-2cb449058efa" />
+
 ---
 
 ## Deliverables \& Submission for Lab 4
