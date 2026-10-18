@@ -558,6 +558,8 @@ The proximity sensor is not particularly accurate for caputuring object beyond 1
 When people pour tea into the cup in front of machine, the machine will perform the knocking action while tea is pouring. The machine should stop when pouring is done (when its front is clear).
 
 
+https://github.com/user-attachments/assets/a4a1d16a-a5a1-409d-9d01-a3859cfd697d
+
 ---
 
 ## Deliverables \& Submission for Lab 4
