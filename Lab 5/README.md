@@ -108,6 +108,8 @@ pi@raspberrypi:~ $ ollama list
 
 \*\*\***Include a screenshot of `ollama list` showing your models, and the `bus.jpg` result and your own photo with their boxes.**\*\*\*
 <img width="469" height="85" alt="image" src="https://github.com/user-attachments/assets/d03363dd-6fd9-402f-8c19-6625bb23d7a4" />
+<img width="847" height="1200" alt="dancing" src="https://github.com/user-attachments/assets/2e434b1e-dae0-454d-8c59-c374f25929a0" />
+<img width="810" height="1080" alt="bus" src="https://github.com/user-attachments/assets/b8f56576-a07e-40f9-8ffd-7f3a241a27ec" />
 
 
 ## Part B. 
