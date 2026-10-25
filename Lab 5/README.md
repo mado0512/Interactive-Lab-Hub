@@ -171,6 +171,7 @@ Try the two main features of this script: 1) pinching for percentage control (th
 Consider how you might use this position based approach to create an interaction, and write how you might use it on either face, hand or body pose tracking.
 
 \*\*\***Include a screenshot or short video of the hand pose demo, and write how you might use face, hand or body pose tracking in your observant system.**\*\*\*
+
 ![Quiet Coyote!](image-2.png)
 
 In our project, we might use face detection and face landmark to do binary classification on Sleep apnea on a given snapshot on face (presence / not_presence)
@@ -268,6 +269,126 @@ One person came in from the right, moved close to the camera, and left after abo
 ```
 
 \*\*\***Document the pipeline: at least two runs with the log, the question, Qwen's answer, and whether it was right. Include one case where Qwen got it wrong, and say what you changed in the interpreter and why.**\*\*\*
+
+**Run 1.** `python yolo_to_qwen.py`, a 60 s watch with the interpreter as shipped. The log it wrote, all 20 lines of it:
+
+```
+18:35:18 1 person(s) at right/close
+18:35:33 3 person(s) at center/close, left/far, right/close
+18:35:34 3 person(s) at left/close, center/close, right/close
+18:35:34 2 person(s) at left/close, center/close
+18:35:35 2 person(s) at center/close, left/close
+18:35:36 1 person(s) at center/close
+18:35:36 2 person(s) at left/close, center/close
+18:35:37 1 person(s) at center/close
+18:35:38 2 person(s) at left/close, center/close
+18:35:39 1 person(s) at left/close
+18:35:39 1 person(s) at center/close
+18:35:47 1 person(s) at right/close
+18:35:55 1 person(s) at center/close
+18:35:56 1 person(s) at right/close
+18:36:02 1 person(s) at center/close
+18:36:03 1 person(s) at right/close
+18:36:09 1 person(s) at center/close
+18:36:11 nobody
+18:36:12 1 person(s) at right/close
+18:36:13 nobody
+```
+
+Question (the script's default): *How many people were there, what were they doing, and did anything change?*
+
+Qwen (`qwen3.5:0.8b`, 52.8 s):
+
+> There were 5 people present throughout the entire 61-second observation period. They were all located in various positions such as center, left, or right, and they were consistently engaged in close-up activities like sitting or standing near a camera. No significant changes occurred to their arrangement or activity levels during this time.
+
+![Qwen answering the first log](ask_qwen_round1.png)
+
+**Was it right? Mostly no, and wrong in a way worth keeping.** Checked line by line against the log:
+
+* *5 people* — the log never counts more than **3** at once, and it counts 1, 2 or 3. Wrong.
+* *present throughout the entire period* — one person at the start, three in the middle, `nobody` twice at the end. Wrong, and it is what makes the count wrong: 5 looks like the number of people you get if you count appearances instead of people.
+* *positions such as center, left or right* — that is exactly the `side` field. Right.
+* *close-up activities like sitting or standing* — the log has no activity words at all, only side and `close`/`far`. Invented.
+* *no significant changes* — 1 → 3 → 2 → 1 → nobody inside 55 s. Wrong.
+
+So it read the vocabulary of the interpreter correctly and the timeline not at all: one right claim in five. The reason is in the log, and not only in the model. Lines 3 and 4 are the same three people listed in a different order (and one of them jumps `far` → `close`), and lines 5–11 flip between 1 and 2 people every second. YOLO is re-ordering its boxes and dropping a detection on alternate frames, and `interpret()` reports both as news, so the log has twenty "changes" in a scene where one or two people sat close to the camera. Nothing in the log says how long a reading lasted either — a line that held for 8 s and a line that held for 1 s look identical — so "nothing changed" is a fair reading of a list of near-identical strings, and "5" is what you get when you try to remember them.
+
+**What I changed in the interpreter, and why.** Two changes, both about making the log mean what it says:
+
+1. *Sort the people, left to right.* `interpret()` joined the boxes in whatever order YOLO returned them, so a stable scene could produce two "different" readings. Sorting by the box centre makes the same scene the same string:
+
+   ```python
+   people.append((cx, side, dist))                 # (centre x, left/centre/right, close/far)
+   people.sort()                                   # stable text: left to right, not YOLO's order
+   reading = f"{len(people)} person(s) at " + ", ".join(f"{s}/{d}" for _, s, d in people)
+   ```
+
+2. *Make a reading hold still before it is logged, and say for how long.* A reading now enters the log only after it repeats for a second (two samples at 0.5 s), and each line ends with the duration of the reading it replaced, so the model gets the time axis the timestamps alone did not give it:
+
+   ```python
+   if reading == pending:
+       streak += 1
+   else:
+       pending, streak = reading, 1
+   if (every or reading != last) and streak >= stable:   # ignore a one-sample flicker
+       now = time.time()
+       log.append(f"{stamp} {reading} (lasted {now - t_last:.0f} s)")
+       last, t_last = reading, now
+   ```
+
+Why these and not a bigger model: the model can only reason about what the words allow. "1 person(s) at center/close" twenty times is a list of sightings; "1 person(s) at center/close, then 2 for 6 s, then nobody" is a story a 0.8B model can narrate. The interpreter is the design decision, so the fix belongs there rather than in the prompt.
+
+**Run 2.** Same interpreter as run 1 — the fix above was written after both runs — a 45 s watch in a quieter room, one person in front of the camera. The log, 18 lines:
+
+```
+18:43:28 1 person(s) at center/close
+18:43:34 nobody
+18:43:36 1 person(s) at right/close
+18:43:38 1 person(s) at right/far
+18:43:43 1 person(s) at right/close
+18:43:44 nobody
+18:43:45 1 person(s) at right/close
+18:43:54 nobody
+18:43:55 1 person(s) at left/close
+18:43:59 nobody
+18:44:00 1 person(s) at right/close
+18:44:00 1 person(s) at right/far
+18:44:01 nobody
+18:44:01 1 person(s) at right/far
+18:44:02 nobody
+18:44:03 1 person(s) at right/far
+18:44:07 1 person(s) at right/close
+18:44:08 nobody
+```
+
+Question: the same default question. Qwen (`qwen3.5:0.8b`, 38.5 s):
+
+> There are 1 person(s) present throughout the entire duration of the observation. They were all located near the center or right side of the room and remained stationary; no one moved to a different location. No changes occurred in their activity level or position during the 45-second period.
+
+![Qwen answering the second log](ask_qwen_round2.png)
+
+**Was it right? Much closer: three claims of four.**
+
+* *1 person* — right. No line has more than one, so the count is the one thing the log cannot get wrong here.
+* *near the center or right side* — right. Nine of the eleven person lines say `right`, one `center`, one `left`.
+* *remained stationary* — right about the person, wrong about what the detector saw: four `far` readings (18:43:38, 18:44:00–18:44:03) say the box shrank, so the distance did change, whether or not the person did.
+* *throughout the entire duration* and *no changes occurred* — wrong. `nobody` appears seven times, and 18:44:00–18:44:03 changes four times in four seconds.
+
+| | Run 1 | Run 2 |
+|---|---|---|
+| watch | 60 s, 20 lines | 45 s, 18 lines |
+| most people in the log | 3 | 1 |
+| Qwen, `qwen3.5:0.8b` | 52.8 s, 1 claim in 5 | 38.5 s, 3 claims in 4 |
+| how it was wrong | invented a count (5), invented activity, missed every change | invented stillness: no `nobody`, no `far` |
+
+**What the two runs together say.** The second answer is better, but not because the pipeline got better — the interpreter is identical. Round 2 was a simpler scene: with one person in view, the detector's flicker can only make them disappear, which the model happily smooths away, so "1 person, right side, stationary, no changes" is a truer description of that room than the log is. In round 1 the same flicker changed the *count* (1 → 2 → 3 → 2 → 1), and the same smoothing turned it into "5 people" and "nothing changed". So the model is not reasoning over the log in either case; it is guessing which lines are noise, and it gets away with it only when the noise is small. That is the argument for fixing the log instead of the prompt: gate a reading on `stable=2` samples and stamp how long each reading held, and the next log should look like
+
+```
+18:43:36 1 person(s) at right/close (lasted 8 s)
+18:43:44 nobody (lasted 2 s)
+```
+
+which says out loud what Qwen was guessing.
 
 ---
 

@@ -47,22 +47,33 @@ def interpret(r):
         cx = (x1 + x2) / 2
         side = "left" if cx < w / 3 else "right" if cx > 2 * w / 3 else "center"   # which third of the frame
         dist = "close" if (y2 - y1) > 0.6 * h else "far"                           # how tall the box is
-        people.append(f"{side}/{dist}")
-    reading = f"{len(people)} person(s) at {', '.join(people)}" if people else "nobody"
+        people.append((cx, side, dist))
+    # Sorted by the middle of the box, so the same scene is always the same string: YOLO
+    # does not return its boxes in a fixed order, and unsorted readings wrote a new log
+    # line every time two people swapped places in the list.
+    people.sort()
+    reading = (f"{len(people)} person(s) at " + ", ".join(f"{s}/{d}" for _, s, d in people)
+               if people else "nobody")
     if others:
         reading += "; also " + ", ".join(sorted(others))
     return reading
 
 
-def watch(seconds, every=False, interval=0.5, show=True, all_classes=False):
-    """Watch the webcam for `seconds`. Returns the log as a list of 'HH:MM:SS reading' lines."""
+def watch(seconds, every=False, interval=0.5, show=True, all_classes=False, stable=2):
+    """Watch the webcam for `seconds`. Returns the log as a list of 'HH:MM:SS reading' lines.
+
+    A reading is written only after it has been the same for `stable` samples in a row, and
+    each line records how long the reading it replaced lasted. Without that, one dropped
+    detection is a change, and the log has no time axis for the model to reason over.
+    """
     cap = cv2.VideoCapture(0)
     cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
     cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
     if not cap.isOpened():
         raise SystemExit("no webcam found: is it plugged in?")
     classes = None if all_classes else [0]      # class 0 is "person"; the other 79 are noisy at this frame size
-    log, last = [], None
+    log, last, pending, streak = [], None, None, 0
+    t_last = time.time()
     t_end = time.time() + seconds
     while time.time() < t_end:
         ok, frame = cap.read()
@@ -71,10 +82,16 @@ def watch(seconds, every=False, interval=0.5, show=True, all_classes=False):
             continue
         r = model.predict(frame, imgsz=320, conf=0.4, classes=classes, verbose=False)[0]
         reading = interpret(r)
-        if every or reading != last:
-            log.append(f"{datetime.datetime.now():%H:%M:%S} {reading}")
+        if reading == pending:
+            streak += 1
+        else:
+            pending, streak = reading, 1
+        if (every or reading != last) and streak >= stable:
+            now = time.time()
+            lasted = f" (lasted {now - t_last:.0f} s)" if log else ""
+            log.append(f"{datetime.datetime.now():%H:%M:%S} {reading}{lasted}")
             print(log[-1], flush=True)
-            last = reading
+            last, t_last = reading, now
         if show:
             view = r.plot()                          # the frame with YOLO's boxes drawn on it
             cv2.putText(view, reading, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 0), 2)
