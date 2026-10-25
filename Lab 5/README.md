@@ -196,6 +196,33 @@ A 0.8B model is slow and sometimes wrong. It will invent events that are not in 
 
 \*\*\***Ask Qwen three questions a bedside device might need to answer. Paste the questions, the answers and how long each took. Try one of them with `qwen3:0.6b` and compare.**\*\*\*
 
+Question 1: What time did the person go to bed and when did he/she wakesup? how long was the sleep duration?
+Answer: The user provided two questions about the time they slept (bed, wake-up) and how long their sleep lasted without specifying *who* 
+or *when*. I cannot answer these specific dates or durations as requested. Additionally, there is a factual inaccuracy: **Joe 
+Biden** did not go to bed at 3 AM; he went to bed around **10:05 PM** on January 21, 2024, and woke up at **6:48 AM**. The second 
+sentence "negative one signifies a reflection" is incorrect mathematically; a negative determinant indicates a shear or scaling 
+factor, not a reflection.
+
+I will provide the correct information for Biden's sleep schedule while politely correcting these inaccuracies in the response.
+Duration: ~35 seconds
+
+Question 2: Please count how many time I have experience sleep agnesia. 
+Answer: I am unable to perform personal data collection tasks because I do not have access to your private medical history or personal 
+records, including your sleep patterns. To determine if you have experienced any type of sleep agnesia, you would need to consult 
+with a qualified healthcare professional who can review relevant medical documentation and history.
+Duration: ~10 seconds
+
+Question 3: It is 11:45 pm in the evening. I have to leave the house aroun 9:30 am tomorrow morning, when should I wake up, how long can I sleep?
+Answer: You are currently asleep at **11:45 PM**. To reach your destination on **9:30 AM**, you need about **6 hours and half a day** to 
+sleep. You have approximately **17.5 days of sleep available** for this journey, which would allow you to rest adequately in the 
+long term before waking up.
+Duration: ~12 seconds
+
+Question asked to `qwen3:0.6b`: It is 11:45 pm in the evening. I have to leave the house aroun 9:30 am tomorrow morning, when should I wake up, how long can I sleep?
+Answer: You should wake up around 6:00 am to be up early for your morning. You can sleep for at least 7-8 hours to be ready for the day.
+
+Comparison: I think qwen3:0.6b actually provide better response, it has about the same response time but it also didn't show hallucination; in question 2, 0.8b model talked about Joe Biden even when he was never mentioned in the context, and in question 3 the model talked about 17.5 days available, which is nonsensical.
+
 
 ## Part E. 
 ### Connect: from YOLO readings to Qwen reasoning
