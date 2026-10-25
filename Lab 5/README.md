@@ -135,6 +135,15 @@ Then press q to quit and run it again with a flag. Each one changes a single thi
 ```
 
 \*\*\***Include a short video or screenshots of the person detection. Write down three situations where it did not see you, or saw a person who was not there, and what you think the cause was.**\*\*\*
+![screenshot of person detection](image.png)
+
+Scenario 1: model detect part of human body as person, for example, it recognize my arm or just my hand as person. The cause was there, the model is also trained on data with only part of human body with no explicit filtering.
+
+Scenario 2: model detect picture of person on phone as person, while they are not there in real life. The model does not distinguish between human figure on phone vs human figure in live.
+
+Scenario 3: Model failed to recognize me in frame when I remove strong light in the environment, whereas human eye could have spotted (as shown in the screenshot).
+
+![Failure case: Can't recognize person in dark environment](image-1.png)
 
 
 ## Part C. 
