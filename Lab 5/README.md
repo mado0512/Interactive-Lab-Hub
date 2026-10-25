@@ -171,7 +171,9 @@ Try the two main features of this script: 1) pinching for percentage control (th
 Consider how you might use this position based approach to create an interaction, and write how you might use it on either face, hand or body pose tracking.
 
 \*\*\***Include a screenshot or short video of the hand pose demo, and write how you might use face, hand or body pose tracking in your observant system.**\*\*\*
+![Quiet Coyote!](image-2.png)
 
+In our project, we might use face detection and face landmark to do binary classification on Sleep apnea on a given snapshot on face (presence / not_presence)
 
 ## Part D. 
 ### Reason: run Qwen on the Pi with Ollama
