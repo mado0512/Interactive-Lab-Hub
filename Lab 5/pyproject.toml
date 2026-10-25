@@ -1,0 +1,24 @@
+[project]
+name = "lab-5"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Shifeng Hong", email = "sfHong512@gmail.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "mediapipe==0.10.18",
+    "ncnn>=1.0.20261020",
+    "opencv-python==4.11.0.86",
+    "pnnx==20260526",
+    "requests>=2.34.2",
+    "ultralytics>=8.4.183",
+]
+
+[project.scripts]
+lab-5 = "lab_5:main"
+
+[build-system]
+requires = ["uv_build>=0.12.23,<0.13.0"]
+build-backend = "uv_build"

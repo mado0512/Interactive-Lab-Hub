@@ -1,0 +1,19 @@
+{
+  "settings_version": "0.0.8",
+  "datasets_dir": "/home/pi/Interactive-Lab-Hub/Lab 5/datasets",
+  "weights_dir": "/home/pi/Interactive-Lab-Hub/Lab 5/weights",
+  "runs_dir": "/home/pi/Interactive-Lab-Hub/Lab 5/runs",
+  "uuid": "9d7400aed4bee90bfd4181cb6e5037255cc4f787b9622fc8db7d4124990cedcc",
+  "sync": true,
+  "api_key": "",
+  "openai_api_key": "",
+  "clearml": true,
+  "comet": true,
+  "dvc": true,
+  "mlflow": true,
+  "raytune": true,
+  "tensorboard": false,
+  "wandb": false,
+  "vscode_msg": true,
+  "openvino_msg": false
+}
