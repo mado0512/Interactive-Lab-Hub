@@ -141,7 +141,7 @@ Scenario 1: model detect part of human body as person, for example, it recognize
 
 Scenario 2: model detect picture of person on phone as person, while they are not there in real life. The model does not distinguish between human figure on phone vs human figure in live.
 
-Scenario 3: Model failed to recognize me in frame when I remove strong light in the environment, whereas human eye could have spotted (as shown in the screenshot).
+Scenario 3: Model failed to recognize me in frame when I remove strong light in the environment, whereas human eye could have spotted (as shown in the screenshot). I think the cause is that there are insufficient data on human figure in dark environment, also, even if there is, it provide very weak signal to distinguish from other pixel value. Therefore, implementer should consider pre-processing (e.g. increase exposure) image input instead of relying on the yolo model to recognize human in dark environment.
 
 ![Failure case: Can't recognize person in dark environment](image-1.png)
 
