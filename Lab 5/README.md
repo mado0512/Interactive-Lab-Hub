@@ -417,93 +417,62 @@ Stuck? A kitchen that tells you who raided the fridge. A desk that reports wheth
 Use storyboards and/or [Verplank diagrams](https://ccrma.stanford.edu/courses/250a-fall-2004/IDSketchbok.pdf).
 
 \*\*\***Insert ideas, sketches, Verplank diagrams and storyboards for your night-time interaction here.**\*\*\*
+![alt text](image-3.png)
 
 ## Prep for Part 2
 
-1. Look at and give feedback on the Part F storyboards.
+![alt text](IMG_20261029_201757266.jpg)
+We received feedback from one of our classmates who said that the snoring aspect seems interesting. They noted that there may be instances of confusion where the user may trigger another event so audio cues may help. They also made comments that some more interactive elements would be nice. 
 
-   **Feedback we received on our idea.** The storyboard was well received: the idea was called a good one *because* it puts every resource from the quarter on the same night instead of bolting a new sensor on at the end. YOLO and MediaPipe (Part B, Part C) do the seeing, Qwen (Part D, Part E) does the reasoning over the log, the microphone and speaker from Lab 3 carry the snoring sound in and the morning report out, and the button / OLED / Mini PiTFT from Lab 4 and Lab 2 handle the bedtime hand-off and the wake-up reveal. Each lab is a stage of one interaction, not a separate demo.
+With this feedback in mind we made the following revisions:
 
-   The questions that came back with it:
-   * *A camera on a sleeping person is the most privacy-expensive sensor in this lab.* We answer it by pointing the camera at one pillow, keeping no images, and running the system for one person who is also the designer.
-   * *Snoring is an audio event, not a visual one.* An open mouth is not the same as a snore, and a quiet closed mouth can still be a snore. That pushes the microphone to the primary sensor and the camera to a corroborating one.
-   * *Sleep apnea is not visible to a camera at all.* Apnea is a stop in airflow, measured with airflow and blood-oxygen sensors in a sleep study. We can log "possible snore events and open-mouth stretches"; we cannot and do not diagnose anything.
-   * *It will be dark.* A normal webcam sees black at night, so the visual side only works with IR illumination, or it has to be dropped to an audio-only night.
+	1. Instead of a button to activate, we decided on triggering the system with Quiet Coyote.  We thought Quiet Coyote was appropriate, since it was often used to signal children to calm down and be quiet. 
+	
+	2. We also added more audio elements, such as "good night", "good morning", and a verbal sleep quality report so that users would know when the system was working/processing, and it'd offer more convenient, natural interaction. 
+Having music play to let users know its time to sleep is also a subtle way users know to care more about their sleep.
 
-2. [Update your Lab Hub](prep.md#get-the-latest-content) to get the latest content for Part 2. &nbsp;— done; the Pi is on the Fall2026 branch and pushed back to our own repo.
+<img width="956" height="721" alt="Screenshot 2026-11-01 at 10 22 34 AM" src="https://github.com/user-attachments/assets/337fe215-3c88-4e50-9357-f2ecca8ebb4f" />
 
-3. Decide where the device will spend the night and who else lives there. Get their OK before the first run.
+***Describe the interaction before.***
 
-   The device spends the night in **Shifeng's bedroom, mounted directly above his pillow and hanging over it**, looking down at the pillow. Shifeng is the only person who sleeps there, **no one else will be in the room or the apartment that night**, and there are no roommates or guests to consent on behalf of. Since the designer is also the only subject, the OK is his own; the run is cancelled or moved if anyone else is ever in the house. The frame covers the pillow and the head on it and nothing else — not the doorway, not the rest of the bed, not the room — and no snapshots leave the Pi or survive the night.
+Users will give the system a bedtime, such as 11pm. 15 minutes before the bedtime (in this case, 10:45pm), calming music will begin playing to let users know its time to go to bed. Users will be able to stop the music/let the system know they're about to sleep by signaling Quiet Coyote.Once the system processes the Quiet Coyote, a LED slowly pulses red and the system says "Good Night". 
 
-4. Revise your storyboard with the feedback and with what you learned in Part E about where the pipeline breaks.
+I was responsible for programming the before bedtime portion of the project. I utilized ChatGPT, Piper for the speech, and mediapipe for the camera vision. Below is a video showing how the program works. 
 
-   **What Part E changed.** Part E taught us that the language model never sees pixels, only the words `interpret()` writes, so anything YOLO cannot name simply does not exist for Qwen. `yolo26n` is the 80-class COCO detector: its finest answer about a sleeper is *"1 person(s) at center/close"*. There is no `mouth`, no open/closed class, and `-pose` gives 17 body keypoints with nothing on the face. So the revised design stops asking YOLO for the mouth. **MediaPipe Face Mesh** answers it instead, as a number: mouth aspect ratio (inner-lip gap ÷ mouth-corner width, landmarks 13, 14, 61, 291), which reads ≈0.0 closed and ≈0.3–0.6 open, measured at ~12 ms/frame on this Pi. YOLO keeps the job it is actually good at — is someone in bed, and are they lying on their back or their side — and the microphone carries the snoring itself. And per the house rule, everything is *sampled*: one frame every 10–20 s, one audio window every 5 s, never a stream.
+Code Link: https://github.com/chonjessica23/Interactive-Lab-Hub/blob/Fall2026/Lab%205/quiet_coyote_p1.py
 
-**Revised storyboard.**
+https://drive.google.com/file/d/1TRhDM_q4PxSXFP7iWNiHiMuxS9sRXQ5v/view?usp=drive_link
 
-* **Before bed — the hand-off.** Shifeng lies down and presses the Lab 4 button (or says "good night"; Lab 3 microphone). The device acknowledges in under thirty seconds: a line on the OLED / Mini PiTFT, *"watching for snoring — mouth + sound — until morning"*, an LED that dims instead of lights up, and `overnight.py` starts writing `night_log.jsonl`.
-* **While asleep — two signals, sampled.** Every 5 s the microphone logs loudness and low-band energy (the 60–300 Hz range where a snore fundamental sits) and marks a *snore event* when it stays above baseline for a few seconds with the right rhythm; every 10–20 s a single frame goes to Face Mesh for the mouth-aspect-ratio number and to YOLO for presence and back-vs-side posture. Each line in the log is dull on purpose: `03:12:20 snore_event 6s, mouth_open 0.41, person supine`. No frames are stored once the numbers are taken.
-* **When awake — the reveal.** Shifeng presses the button again, and the night becomes one thing he can take in half-asleep: Qwen's three-sentence report, spoken through the Lab 3 speaker and echoed on the Mini PiTFT with a short timeline of the snore events and open-mouth stretches. The report is honest about a quiet night — "no snore events; you were on your side most of the night" — and it says *possible snoring*, never apnea.
+***Screenshots or videos of the running system.***
 
-## Part G. 
-### Design the interaction before
+**Bedtime Interaction**
 
-The hand-off: the person tells the device what to watch tonight, and the device acknowledges it. Keep it to a thirty-second ritual. A button or a touch (Lab 4), a spoken sentence (Lab 3), a wave or a Quiet Coyote at the camera (Part C). The acknowledgement can be a line on the display, a tone, or an LED that dims rather than lights up. At its simplest, the hand-off just sets the question that the morning will answer.
+Once the system went into "sleep mode", the camera would detect 3 events: mouth open, instances of snoring, and instances when the user left the screen, perhaps to go to the bathroom, get a late night snack, etc. We believed these elements would help determine the user's sleep quality, discussed later in this documentation. Snoring was marked when sound was detected above a certain decibel threshold, while the mouth being open was detected by determining the distance between the points on the upper and lower lip, and setting a trigger threshold. The bedtime portion ends when the user signals Quiet Coyote again. All these instances were tracked in a separately created log file that will be used for the morning portion. 
 
-\*\*\***Describe the bedtime interaction and include a short video of someone handing the night over to the device.**\*\*\*
+This portion was handled by Shifeng. A video demonstration is below. 
 
-## Part H. 
-### Incorporate the observant system
+https://drive.google.com/file/d/1FJmmQnf50g7aOtpMr3x_jOTYo-hQbLKE/view?usp=drive_link
 
-The Part E pipeline becomes the night shift. `overnight.py` runs your `interpret()` from `yolo_to_qwen.py` every few seconds, people only unless you pass `--all`, and writes the readings to `night_log.jsonl`; the reasoning waits for the morning. Start it inside `tmux` so it keeps running after you close your laptop, and stop it with Ctrl-C in the morning:
+**Morning Interaction**
 
-```
-(.venv) pi@raspberrypi:~/Interactive-Lab-Hub/Lab 5 $ tmux new -s night
-(.venv) pi@raspberrypi:~/Interactive-Lab-Hub/Lab 5 $ python overnight.py
-```
+Once we both finished our parts, we sat together using AI to combine both our files and help create the morning report. The system compiles all the information created during the bedtime interaction that then writes a report on the minipi screen, rating your sleep quality and giving percentage of your time either snoring, having your mouth open, or disappearing. This report is also read out loud to users as well. 
 
-Fake a night first: run it for thirty seconds while you walk around, stop it, and run `morning.py` from Part I. When that looks right, run a real night. If your storyboard needs a sensor rather than the camera, swap in the Lab 4 example code and log its reading the same way.
+Link to full code:
 
-\*\*\***Run the system for at least one real night. Include the log (or an excerpt) and a few sentences on what broke or surprised you.**\*\*\*
+[Video of it all working together:](https://drive.google.com/file/d/135YGaPZvVVAInZDiwK7Yw9aRUJEGCDgq/view?usp=drive_link) 
 
-## Part I. 
-### Design the interaction after
+**Real testing**
 
-The reveal. The night produced a log; the morning turns it into something a half-awake person can take in. `morning.py` is the smallest version: it asks Qwen for a three-sentence report.
+<img width="1920" height="1440" alt="IMG_20261030_232847" src="https://github.com/user-attachments/assets/3235317b-99cc-4e30-896b-5c275616994c" />
 
-```
-(.venv) pi@raspberrypi:~/Interactive-Lab-Hub/Lab 5 $ python morning.py
-```
+[First POV of machine installment](https://drive.google.com/file/d/1nxaRwjgQd2S2v1eRSqiwHsOHLepvxjsC/view?usp=sharing)
 
-Make it yours: show the report on the Mini PiTFT, read it aloud with Piper from Lab 3, plot the night as a timeline, or ask for JSON (`--json`, Part D) and move a servo. Whatever you pick, make sure it is honest about a night in which nothing happened.
+Shifeng tested the program in his dorm and found the following matters comeup:
 
-## Final documentation
+	1. Because of the bedframe, he was limited in how he could set up the camera which impacted how close the camera was to the face. This in turn impacted the amount of room a user had to signal Quiet Coyote, and changed our mouth distance threshold. 
+	
+	2. We thought having the LED shine brightly would be enough to illuminate the face for the camera to detect features, but found that more light was needed instead. So this system would only work if users slept with a night light as well. 
 
-Document all the prototypes and iterations you have designed and worked on. The deliverables for this lab are writings, sketches, photos, and videos that show what your system:
+If we had to iterate this project again or anyone else wanted to try, I would recommend getting the exact dimensions of the bed frame and camera height so you could anticipate those thresholds and positioning better. I would also look for alternative equipment that could perhaps capture imaging in the dark better, or alternative directions such as incorporating a soothing light. 
 
-* "Looks like": how the device sits in the room at night, and what it looks like at bedtime and in the morning.
-* "Works like": the pipeline from detector to interpreter to log to reasoner, with a real night's data.
-* "Acts like": how a person hands the night over and what they get back.
-
-\*\*\***Include a short video of the whole system**\*\*\*
-
-As always, make sure you document contributions and ideas from others (and AI) explicitly in your writeup.
-
-You are permitted (but not required) to work in groups and share a turn in; you are expected to make equal contribution on any group work you do, and N people's group project should look like N times the work of a single person's lab. Make sure the page for the group turn in is linked to your personal Interactive Lab Hub page.
-
-## Deliverables & Submission for Lab 5
-
-For submission, the readme.md page for this lab should be edited to include the work you have done:
-* Upload any materials that explain what you did, including your code and night log, into your Lab 5 repository, and link them in your Lab 5 readme.md.
-* Labs are due on Sundays, make sure to submit your Lab 5 readme.md to Canvas.
-
-<details>
-  <summary><strong>Submission Cleanup Reminder (Click to Expand)</strong></summary>
-
-  **Before submitting your README.md:**
-  - This readme.md file has a lot of extra text for guidance.
-  - Remove all instructional text and example prompts from this file.
-  - You may either delete these sections or use the toggle/hide feature in VS Code to collapse them for a cleaner look.
-  - Your final submission should be neat, focused on your own work, and easy to read for grading.
-</details>
+[Full Code Implementation](quiet_coyote_night.py)
