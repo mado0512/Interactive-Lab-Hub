@@ -421,12 +421,30 @@ Use storyboards and/or [Verplank diagrams](https://ccrma.stanford.edu/courses/25
 ## Prep for Part 2
 
 1. Look at and give feedback on the Part F storyboards.
-   **Put the feedback for your ideas here.**
-2. [Update your Lab Hub](prep.md#get-the-latest-content) to get the latest content for Part 2.
+
+   **Feedback we received on our idea.** The storyboard was well received: the idea was called a good one *because* it puts every resource from the quarter on the same night instead of bolting a new sensor on at the end. YOLO and MediaPipe (Part B, Part C) do the seeing, Qwen (Part D, Part E) does the reasoning over the log, the microphone and speaker from Lab 3 carry the snoring sound in and the morning report out, and the button / OLED / Mini PiTFT from Lab 4 and Lab 2 handle the bedtime hand-off and the wake-up reveal. Each lab is a stage of one interaction, not a separate demo.
+
+   The questions that came back with it:
+   * *A camera on a sleeping person is the most privacy-expensive sensor in this lab.* We answer it by pointing the camera at one pillow, keeping no images, and running the system for one person who is also the designer.
+   * *Snoring is an audio event, not a visual one.* An open mouth is not the same as a snore, and a quiet closed mouth can still be a snore. That pushes the microphone to the primary sensor and the camera to a corroborating one.
+   * *Sleep apnea is not visible to a camera at all.* Apnea is a stop in airflow, measured with airflow and blood-oxygen sensors in a sleep study. We can log "possible snore events and open-mouth stretches"; we cannot and do not diagnose anything.
+   * *It will be dark.* A normal webcam sees black at night, so the visual side only works with IR illumination, or it has to be dropped to an audio-only night.
+
+2. [Update your Lab Hub](prep.md#get-the-latest-content) to get the latest content for Part 2. &nbsp;— done; the Pi is on the Fall2026 branch and pushed back to our own repo.
+
 3. Decide where the device will spend the night and who else lives there. Get their OK before the first run.
+
+   The device spends the night in **Shifeng's bedroom, mounted directly above his pillow and hanging over it**, looking down at the pillow. Shifeng is the only person who sleeps there, **no one else will be in the room or the apartment that night**, and there are no roommates or guests to consent on behalf of. Since the designer is also the only subject, the OK is his own; the run is cancelled or moved if anyone else is ever in the house. The frame covers the pillow and the head on it and nothing else — not the doorway, not the rest of the bed, not the room — and no snapshots leave the Pi or survive the night.
+
 4. Revise your storyboard with the feedback and with what you learned in Part E about where the pipeline breaks.
 
-\*\*\***Post your revised storyboard here.**\*\*\*
+   **What Part E changed.** Part E taught us that the language model never sees pixels, only the words `interpret()` writes, so anything YOLO cannot name simply does not exist for Qwen. `yolo26n` is the 80-class COCO detector: its finest answer about a sleeper is *"1 person(s) at center/close"*. There is no `mouth`, no open/closed class, and `-pose` gives 17 body keypoints with nothing on the face. So the revised design stops asking YOLO for the mouth. **MediaPipe Face Mesh** answers it instead, as a number: mouth aspect ratio (inner-lip gap ÷ mouth-corner width, landmarks 13, 14, 61, 291), which reads ≈0.0 closed and ≈0.3–0.6 open, measured at ~12 ms/frame on this Pi. YOLO keeps the job it is actually good at — is someone in bed, and are they lying on their back or their side — and the microphone carries the snoring itself. And per the house rule, everything is *sampled*: one frame every 10–20 s, one audio window every 5 s, never a stream.
+
+**Revised storyboard.**
+
+* **Before bed — the hand-off.** Shifeng lies down and presses the Lab 4 button (or says "good night"; Lab 3 microphone). The device acknowledges in under thirty seconds: a line on the OLED / Mini PiTFT, *"watching for snoring — mouth + sound — until morning"*, an LED that dims instead of lights up, and `overnight.py` starts writing `night_log.jsonl`.
+* **While asleep — two signals, sampled.** Every 5 s the microphone logs loudness and low-band energy (the 60–300 Hz range where a snore fundamental sits) and marks a *snore event* when it stays above baseline for a few seconds with the right rhythm; every 10–20 s a single frame goes to Face Mesh for the mouth-aspect-ratio number and to YOLO for presence and back-vs-side posture. Each line in the log is dull on purpose: `03:12:20 snore_event 6s, mouth_open 0.41, person supine`. No frames are stored once the numbers are taken.
+* **When awake — the reveal.** Shifeng presses the button again, and the night becomes one thing he can take in half-asleep: Qwen's three-sentence report, spoken through the Lab 3 speaker and echoed on the Mini PiTFT with a short timeline of the snore events and open-mouth stretches. The report is honest about a quiet night — "no snore events; you were on your side most of the night" — and it says *possible snoring*, never apnea.
 
 ## Part G. 
 ### Design the interaction before

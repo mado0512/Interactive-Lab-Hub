@@ -20,3 +20,11 @@ nohup.out
 
 # macOS
 .DS_Store
+
+# The night's logs and snore clips: private, and regenerated every night
+logs/
+
+# Piper voice model (63 MB) and the synthesised good-night cue are rebuilt on demand
+voices/
+goodnight.wav
+goodnight.json

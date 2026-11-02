@@ -1,0 +1,28 @@
+# sleep_report_template.txt - what `python3 sleep_report.py` prints, verbatim.
+# Lines starting with # are dropped before printing; every {field} is filled in.
+# Fields: score, score_exact, verdict, span, start, end, date, duration, hours,
+# sessions, sessions_text,
+# snore_pct, snore_min, snore_events, open_pct, open_min, closed_pct, away_pct, away_min,
+# unseen_pct, unseen_min, unknown_pct, in_bed_pct, peak_mar, snore_peak_dbfs,
+# snore_peak_at, highlights, caveat, scoring, narrative, narrative_source, log.
+# Any str.format spec works: {snore_pct:5.1f}. {narrative} is the morning note that is
+# also read out loud: qwen's 3-4 sentences, or this script's own wording if it is off.
+# Delete this file (or pass --template-file) to use the built-in template instead.
+Sleep report · {date}
+{span} · {duration} in {sessions_text}
+
+  score              {score}/10   ({verdict})
+  possible snoring   {snore_pct:5.1f}%   {snore_events} event(s), {snore_min}
+  mouth open         {open_pct:5.1f}%   {open_min}
+  mouth closed       {closed_pct:5.1f}%
+  out of bed         {away_pct:5.1f}%   {away_min}
+  camera blind spot  {unseen_pct:5.1f}%   {unseen_min}
+
+{highlights}
+{scoring}
+{caveat}
+
+{narrative}
+
+Not a diagnosis: this device hears loud low-frequency sound and sees an open mouth,
+so "possible snoring" is as far as it goes.

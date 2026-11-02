@@ -1,0 +1,6 @@
+{
+  "text": "Good morning, I am analyzing your sleep log last night, should take about 90 seconds",
+  "voice": "en_US-lessac-medium",
+  "length_scale": 1.05,
+  "engine": "piper en_US-lessac-medium"
+}
