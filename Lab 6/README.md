@@ -1,6 +1,8 @@
 # Distributed Interaction
 
-**NAMES OF COLLABORATORS HERE**
+Shifeng Hong (sh2769)
+Arnav Whig (aww96)
+Jessica Chon (jc3932)
 
 For submission, replace this section with your documentation!
 
