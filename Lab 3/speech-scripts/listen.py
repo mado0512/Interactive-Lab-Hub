@@ -45,7 +45,7 @@ def build_vad(model_path: Path, min_silence: float, min_speech: float):
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--model", default="tiny.en", help="whisper model size")
+    parser.add_argument("--model", default="base.en", help="whisper model size")
     parser.add_argument("--vad-model", type=Path, default=DEFAULT_VAD)
     parser.add_argument("--min-silence", type=float, default=0.4,
                         help="seconds of silence that end a turn (default: 0.4)")
