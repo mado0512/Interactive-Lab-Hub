@@ -195,6 +195,3 @@ The camera captured each player’s performance, and the button controlled when 
 
 We wanted to experiment more with rounds and points, but our access to Pis and available players limited how much we could test. If we revisited the project, we would develop those game mechanics further and test with more players to see how the experience changes as the group grows.
 Computation was divided between the players’ Pis, the game host, and the laptop browsers. Each Pi handled its own camera, button inputs, and web page server, keeping device interactions close to the hardware. The game host managed the shared game state, including player assignments, submissions, and round progression. Keeping those decisions in one place helped all players stay on the same round. The MQTT broker routed messages between devices, while the laptop browsers displayed prompts, clips, and results and let players enter guesses. Prompts were selected from a predefined list, so gameplay did not require calls to a language model.
-
-
-<img width="4096" height="3072" alt="pixel setup" src="https://github.com/user-attachments/assets/869dd033-79e8-4db9-bd91-ea7b7acc5503" />
